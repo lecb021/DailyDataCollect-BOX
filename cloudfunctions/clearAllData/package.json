@@ -1,0 +1,9 @@
+{
+  "name": "clearAllData",
+  "version": "1.0.0",
+  "description": "管理员清空云数据库（业绩、绑定关系、操作日志），保留员工花名册",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

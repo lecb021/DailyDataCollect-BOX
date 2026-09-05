@@ -1,0 +1,9 @@
+{
+  "name": "adminUnbind",
+  "version": "1.0.0",
+  "description": "管理员解除员工微信绑定",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

@@ -1,0 +1,192 @@
+@use '@/styles/variables.scss' as *;
+
+.pageContainer {
+  min-height: 100vh;
+  background: $color-bg-page;
+}
+
+.header {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  padding: $spacing-xl $page-padding;
+  border-radius: 0 0 $radius-xl $radius-xl;
+  margin: 0 (-$page-padding);
+}
+
+.headerTitle {
+  color: $color-text-white;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+}
+
+.headerSubtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: $font-size-sm;
+  margin-top: $spacing-xs;
+}
+
+.statsRow {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+}
+
+.statBox {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  text-align: center;
+}
+
+.statBoxValue {
+  color: $color-text-white;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+}
+
+.statBoxLabel {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: $font-size-xs;
+  margin-top: 4rpx;
+}
+
+.employeeList {
+  padding: $spacing-lg $page-padding;
+}
+
+.employeeCard {
+  display: flex;
+  align-items: center;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+
+  &:active {
+    background: $color-bg-hover;
+  }
+}
+
+.employeeAvatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: $radius-round;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  margin-right: $spacing-md;
+  flex-shrink: 0;
+}
+
+.employeeAvatar.admin {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+}
+
+.employeeAvatar.staff {
+  background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+}
+
+.employeeInfo {
+  flex: 1;
+}
+
+.employeeNameRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.employeeName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.roleBadge {
+  font-size: $font-size-xs;
+  padding: 2rpx 10rpx;
+  border-radius: $radius-round;
+  
+  &.admin {
+    background: $color-warning-light;
+    color: $color-warning;
+  }
+  &.staff {
+    background: $color-info-light;
+    color: $color-primary;
+  }
+}
+
+.employeeMeta {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: 4rpx;
+}
+
+.roleBadgeYitang {
+  font-size: $font-size-xs;
+  padding: 2rpx 10rpx;
+  border-radius: $radius-round;
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.bindRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: 8rpx;
+}
+
+.bindBadge {
+  font-size: $font-size-xs;
+  padding: 2rpx 12rpx;
+  border-radius: $radius-round;
+
+  &.bound {
+    background: #D1FAE5;
+    color: #047857;
+  }
+  &.unbound {
+    background: #F1F5F9;
+    color: #94A3B8;
+  }
+}
+
+.bindTime {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.unbindBtn {
+  flex-shrink: 0;
+  align-self: center;
+  font-size: $font-size-xs;
+  color: #DC2626;
+  border: 1rpx solid #FECACA;
+  background: #FEF2F2;
+  padding: 10rpx 20rpx;
+  border-radius: $radius-round;
+  margin-left: $spacing-sm;
+
+  &:active {
+    background: #FEE2E2;
+  }
+}
+
+.selfTag {
+  flex-shrink: 0;
+  align-self: center;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-left: $spacing-sm;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 200rpx $page-padding;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}

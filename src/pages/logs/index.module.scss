@@ -1,0 +1,94 @@
+@use '@/styles/variables.scss' as *;
+
+.pageContainer {
+  min-height: 100vh;
+  background: $color-bg-page;
+}
+
+.logList {
+  padding: $page-padding;
+}
+
+.logItem {
+  display: flex;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.logIcon {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: $radius-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  margin-right: $spacing-md;
+  flex-shrink: 0;
+}
+
+.logIcon.submit {
+  background: #D1FAE5;
+}
+.logIcon.update {
+  background: #DBEAFE;
+}
+.logIcon.login {
+  background: #E0E7FF;
+}
+.logIcon.export {
+  background: #FEF3C7;
+}
+.logIcon.delete {
+  background: #FEE2E2;
+}
+
+.logContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.logTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.logDetail {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-top: 4rpx;
+}
+
+.logMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: $spacing-xs;
+}
+
+.logUser {
+  font-size: $font-size-xs;
+  color: $color-primary;
+}
+
+.logTime {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 200rpx $page-padding;
+  color: $color-text-tertiary;
+}
+
+.loading {
+  text-align: center;
+  padding: 100rpx;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}

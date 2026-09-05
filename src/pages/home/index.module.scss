@@ -1,0 +1,207 @@
+@use '@/styles/variables.scss' as *;
+
+.pageContainer {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 180rpx;
+}
+
+// 顶部欢迎区
+.header {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  padding: $spacing-xl $spacing-lg $spacing-xl;
+  border-radius: 0 0 $radius-xl $radius-xl;
+  margin: 0 (-$page-padding);
+}
+
+.greeting {
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: $font-size-sm;
+  margin-top: $spacing-xs;
+}
+
+// 日期选择
+.dateSelector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-lg;
+  margin: $spacing-md $page-padding;
+  box-shadow: $shadow-card;
+}
+
+.dateSelector:active {
+  opacity: 0.9;
+}
+
+.dateLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.dateValue {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.dateToday {
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: $font-size-xs;
+  padding: 4rpx 16rpx;
+  border-radius: $radius-round;
+  margin-left: $spacing-sm;
+}
+
+// 今日状态卡片
+.statusCard {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  margin: 0 $page-padding $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.statusHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.statusTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.statusBadge {
+  font-size: $font-size-xs;
+  padding: 4rpx 16rpx;
+  border-radius: $radius-round;
+  
+  &.submitted {
+    background: $color-success-light;
+    color: $color-success;
+  }
+  
+  &.pending {
+    background: $color-warning-light;
+    color: $color-warning;
+  }
+}
+
+.statsSingle {
+  text-align: center;
+  padding: $spacing-sm 0;
+}
+
+.statValue {
+  font-size: 48rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.statValue.amount {
+  color: $color-amount;
+}
+
+// 产品列表区
+.sectionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  padding: $spacing-lg $page-padding $spacing-sm;
+}
+
+.productList {
+  padding: 0 $page-padding;
+}
+
+// 备注输入
+.remarkSection {
+  padding: $spacing-md $page-padding;
+}
+
+.remarkInput {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-lg;
+  height: 80rpx;
+  font-size: $font-size-md;
+  box-shadow: $shadow-card;
+}
+
+// 底部提交按钮
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $color-bg-card;
+  padding: $spacing-md $page-padding;
+  padding-bottom: calc(#{$spacing-md} + env(safe-area-inset-bottom));
+  box-shadow: $shadow-float;
+  display: flex;
+  gap: $spacing-md;
+  z-index: 100;
+}
+
+// 合计显示
+.totalDisplay {
+  flex: 1;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8rpx;
+}
+
+.totalLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.totalNumber {
+  font-size: 40rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.totalUnit {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.submitBtn {
+  flex: 2;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+}

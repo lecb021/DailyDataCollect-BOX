@@ -1,0 +1,67 @@
+@use '@/styles/variables.scss' as *;
+
+.statCard {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  box-shadow: $shadow-card;
+  flex: 1;
+  margin: 0 $spacing-xs;
+}
+
+.highlight {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  
+  .label,
+  .value,
+  .unit {
+    color: $color-text-white;
+  }
+}
+
+.statHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-sm;
+}
+
+.icon {
+  font-size: $font-size-lg;
+  margin-right: $spacing-xs;
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.valueRow {
+  display: flex;
+  align-items: baseline;
+}
+
+.value {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.unit {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-left: 4rpx;
+}
+
+.trendRow {
+  margin-top: $spacing-xs;
+}
+
+.trendUp {
+  font-size: $font-size-xs;
+  color: $color-success;
+}
+
+.trendDown {
+  font-size: $font-size-xs;
+  color: $color-error;
+}

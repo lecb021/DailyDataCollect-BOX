@@ -1,0 +1,326 @@
+@use '@/styles/variables.scss' as *;
+@use 'sass:color';
+
+.pageContainer {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 40rpx;
+}
+
+// ============ Tab 切换 ============
+.tabBar {
+  display: flex;
+  padding: $spacing-sm $page-padding;
+  gap: $spacing-xs;
+  background: $color-bg-card;
+  box-shadow: $shadow-card;
+}
+
+.tabItem {
+  flex: 1;
+  text-align: center;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  border-radius: $radius-md;
+  transition: all $transition-base;
+
+  &.active {
+    background: $color-primary;
+    color: $color-text-white;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+// ============ 日期选择条 ============
+.dateBar {
+  display: flex;
+  align-items: center;
+  padding: $spacing-sm $page-padding;
+  background: $color-bg-card;
+  border-bottom: 1rpx solid $color-divider;
+  gap: $spacing-sm;
+}
+
+.dateLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  flex-shrink: 0;
+}
+
+.datePickerBtn {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 8rpx 20rpx;
+  background: $color-bg-hover;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+}
+
+.dateArrow {
+  color: $color-text-tertiary;
+  font-size: $font-size-lg;
+}
+
+.exportActions {
+  margin-left: auto;
+  display: flex;
+  gap: 12rpx;
+}
+
+.downloadBtn {
+  padding: 8rpx 24rpx;
+  background: #10B981;
+  color: $color-text-white;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.exportBtn {
+  padding: 8rpx 24rpx;
+  background: $color-primary;
+  color: $color-text-white;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+// ============ 表格容器 ============
+.tableWrapper {
+  position: relative;
+  background: $color-bg-card;
+  margin: $spacing-md $page-padding;
+  border-radius: $radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+}
+
+// 横向滚动区域
+.horizontalScroll {
+  width: 100%;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+// 左右渐变遮罩提示可滑动（只覆盖表格滚动区域）
+.scrollHintLeft,
+.scrollHintRight {
+  position: absolute;
+  top: 56rpx;  /* 跳过滑动提示文字行 */
+  bottom: 100rpx;  /* 跳过底部滑动轨道和汇总卡片 */
+  width: 40rpx;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.scrollHintLeft {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.scrollHintRight {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+// 滑动提示文字
+.scrollTipText {
+  text-align: center;
+  padding: 8rpx 0;
+  font-size: 20rpx;
+  color: $color-text-tertiary;
+  background: $color-bg-hover;
+  border-bottom: 1rpx solid $color-divider;
+}
+
+// 自定义滑动轨道线 — 显示当前滚动位置
+.scrollTrack {
+  height: 6rpx;
+  background: #E5E7EB;
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollTrackFill {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.scrollTrackBar {
+  height: 100%;
+  width: 10%;
+  background: linear-gradient(to right, $color-primary, $color-primary-light);
+  border-radius: 3rpx;
+  transition: width 0.1s ease;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+// ============ Excel 风格日期标题行 ============
+.dateTitleRow {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  padding: 16rpx 20rpx;
+  border-bottom: 2rpx solid color.adjust($color-primary, $lightness: -10%);
+}
+
+.dateTitleText {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+}
+
+// ============ 产品列表头行 ============
+.tableHeadRow {
+  display: flex;
+  background: $color-bg-hover;
+  border-bottom: 2rpx solid $color-divider;
+}
+
+.tableCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xs;
+  box-sizing: border-box;
+  padding: 12rpx 6rpx;
+  border-right: 1rpx solid $color-divider;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.nameCol {
+  justify-content: flex-start;
+  padding-left: 20rpx;
+  flex-shrink: 0;
+}
+
+.headName {
+  background: $color-bg-hover;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  border-right: 2rpx solid $color-divider;
+}
+
+.headCell {
+  background: $color-bg-hover;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  border-right: 1rpx solid $color-divider;
+}
+
+// ============ 员工数据行 ============
+.tableRow {
+  display: flex;
+  border-bottom: 1rpx solid $color-divider;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  &.rowGaogui .empName {
+    color: #B45309;
+    font-weight: $font-weight-bold;
+    background: #FEF3C7;
+  }
+
+  &.rowYitang .empName {
+    color: #0369A1;
+    font-weight: $font-weight-bold;
+    background: #E0F2FE;
+  }
+}
+
+.empName {
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+  border-right: 2rpx solid $color-divider;
+}
+
+.numCell {
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  min-height: 56rpx;
+}
+
+// ============ 累计行 ============
+.totalsRow {
+  background: #FEF9C3;
+  border-bottom: 2rpx solid #CA8A04;
+  border-top: 2rpx solid #CA8A04;
+}
+
+.totalsLabel {
+  font-weight: $font-weight-bold;
+  color: #854D0E;
+  background: #FEF9C3;
+  border-right: 2rpx solid #CA8A04;
+}
+
+.totalsCell {
+  font-weight: $font-weight-bold;
+  color: #854D0E;
+  background: #FEF9C3;
+  border-right: 1rpx solid #CA8A04;
+}
+
+// ============ 负责人信息行 ============
+.supervisorsRow {
+  padding: 12rpx 20rpx;
+  border-bottom: 1rpx solid $color-divider;
+  background: $color-bg-card;
+}
+
+.supervisorText {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.supervisorName {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+}
+
+// ============ 底部汇总卡片 ============
+.summaryFooter {
+  display: flex;
+  background: $color-bg-card;
+  border-top: 2rpx solid $color-divider;
+}
+
+.summaryItem {
+  flex: 1;
+  text-align: center;
+  padding: $spacing-md;
+  border-right: 1rpx solid $color-divider;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.summaryValue {
+  display: block;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.summaryLabel {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: 4rpx;
+}

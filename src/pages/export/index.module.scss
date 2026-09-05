@@ -1,0 +1,152 @@
+@use '@/styles/variables.scss' as *;
+
+.pageContainer {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $page-padding;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.cardTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+// 报表类型选择
+.typeList {
+  display: flex;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+}
+
+.typeItem {
+  flex: 1;
+  min-width: 180rpx;
+  padding: $spacing-md;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-md;
+  text-align: center;
+  transition: all $transition-base;
+
+  &.active {
+    border-color: $color-primary;
+    background: $color-info-light;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.typeIcon {
+  font-size: 40rpx;
+  margin-bottom: $spacing-xs;
+}
+
+.typeName {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+// 日期选择
+.dateRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.datePicker {
+  flex: 1;
+  padding: $spacing-md;
+  background: $color-bg-hover;
+  border-radius: $radius-sm;
+  text-align: center;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+// 导出格式
+.formatList {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.formatItem {
+  flex: 1;
+  padding: $spacing-md;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-md;
+  text-align: center;
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+
+  &.active {
+    border-color: $color-primary;
+    background: $color-info-light;
+    color: $color-primary;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+// 导出按钮
+.exportActions {
+  margin-top: $spacing-xl;
+}
+
+.exportBtn {
+  width: 100%;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.exportBtn:disabled {
+  opacity: 0.6;
+}
+
+.hint {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  text-align: center;
+  margin-top: $spacing-md;
+}
+
+// 预览卡片
+.previewCard {
+  background: $color-success-light;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-top: $spacing-md;
+}
+
+.previewTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-success;
+  margin-bottom: $spacing-xs;
+}
+
+.previewInfo {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}

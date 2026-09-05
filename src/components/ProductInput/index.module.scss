@@ -1,0 +1,48 @@
+@use '@/styles/variables.scss' as *;
+
+.productCard {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-lg;
+  box-shadow: $shadow-card;
+  margin-bottom: $spacing-sm;
+  border: 2rpx solid transparent;
+  transition: all $transition-base;
+
+  &:active {
+    background: $color-bg-hover;
+  }
+}
+
+.disabled {
+  opacity: 0.7;
+}
+
+.productHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productTag {
+  padding: 4rpx 16rpx;
+  border-radius: $radius-round;
+  display: inline-flex;
+  align-items: center;
+}
+
+.productName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+}
+
+.input {
+  width: 160rpx;
+  text-align: center;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  height: 64rpx;
+  background: $color-bg-hover;
+  border-radius: $radius-sm;
+}
