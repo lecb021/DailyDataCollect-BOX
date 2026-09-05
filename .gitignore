@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+h5-dist/
+
+# AI tool configs
+.pai/
+.snapshots/
+.swc/
+.vscode/
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
